@@ -1,0 +1,93 @@
+```python
+import time
+
+# Matrix Chain Multiplication using Dynamic Programming
+
+def matrix_chain_order(p, n):
+    # m[i][j] stores minimum number of multiplications
+    m = [[0 for _ in range(n)] for _ in range(n)]
+
+    # s[i][j] stores the position where the chain is split
+    s = [[0 for _ in range(n)] for _ in range(n)]
+
+    # length is the chain length
+    for length in range(2, n):
+        for i in range(1, n - length + 1):
+            j = i + length - 1
+            m[i][j] = float('inf')
+
+            for k in range(i, j):
+                cost = (
+                    m[i][k]
+                    + m[k + 1][j]
+                    + p[i - 1] * p[k] * p[j]
+                )
+
+                if cost < m[i][j]:
+                    m[i][j] = cost
+                    s[i][j] = k
+
+    return m, s
+
+
+# Print optimal parenthesization
+def print_optimal_parenthesis(s, i, j):
+    if i == j:
+        return f"M{i}"
+
+    k = s[i][j]
+
+    left = print_optimal_parenthesis(s, i, k)
+    right = print_optimal_parenthesis(s, k + 1, j)
+
+    return f"({left} × {right})"
+
+
+# ---------------- MAIN PROGRAM ----------------
+
+print("CHAIN MATRIX MULTIPLICATION USING DYNAMIC PROGRAMMING")
+
+# User input
+n = int(input("Enter number of matrices: "))
+
+print("\nEnter dimensions of matrices:")
+
+# p contains dimensions
+# For example: A1 = 10x20, A2 = 20x30, A3 = 30x40
+# Enter: 10 20 30 40
+p = list(map(int, input(
+    "Enter dimensions separated by spaces: "
+).split()))
+
+# Check dimensions
+if len(p) != n + 1:
+    print("Error: You must enter", n + 1, "dimensions.")
+    exit()
+
+# Start execution time
+start_time = time.perf_counter()
+
+# Dynamic Programming
+m, s = matrix_chain_order(p, n + 1)
+
+# End execution time
+end_time = time.perf_counter()
+
+# Minimum multiplication cost
+minimum_cost = m[1][n]
+
+# Optimal parenthesization
+parenthesis = print_optimal_parenthesis(s, 1, n)
+
+# Execution time
+execution_time = end_time - start_time
+
+# Output
+print("\n---------- RESULT ----------")
+print("Minimum number of scalar multiplications:", minimum_cost)
+print("Optimal Parenthesization:", parenthesis)
+print("Execution Time:", execution_time, "seconds")
+
+print("\nTime Complexity: O(n^3)")
+print("Space Complexity: O(n^2)")
+```
