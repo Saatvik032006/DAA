@@ -1,0 +1,35 @@
+# Practical 6: Matrix Chain Multiplication
+
+This practical uses dynamic programming to find the parenthesization that minimizes the number of scalar multiplications needed for a chain of matrices. The order of the matrices stays the same; only the grouping of multiplications is optimized.
+
+## Program
+
+- `chain_matrix.py` calculates the minimum multiplication cost and reconstructs the optimal parenthesization.
+- Matrix dimensions are currently hard-coded in the list `p = [10, 30, 5, 60]`. For a chain of `n` matrices, `p` must contain `n + 1` dimensions: matrix `Ai` has dimensions `p[i - 1] x p[i]`.
+- The current example represents `A1` as `10 x 30`, `A2` as `30 x 5`, and `A3` as `5 x 60`.
+
+## Complexity
+
+For a chain of `n` matrices, the dynamic-programming tables take O(n^2) space and the algorithm takes O(n^3) time.
+
+## Requirements
+
+- Python 3
+- No third-party packages
+
+## Run
+
+Open a terminal in this directory and run:
+
+```powershell
+python chain_matrix.py
+```
+
+The program prints the minimum scalar multiplication count and an optimal parenthesization. With the default dimensions, the result is:
+
+```text
+Minimum number of scalar multiplications: 4500
+Optimal parenthesization: ((A1 × A2) × A3)
+```
+
+To try another chain, update the `p` list in `chain_matrix.py`. Each neighboring matrix must have matching dimensions for multiplication to be valid. The program computes the order and cost; it does not multiply actual matrix values.

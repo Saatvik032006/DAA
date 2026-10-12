@@ -1,0 +1,33 @@
+# Practical 3: Max Heap Sort
+
+This practical demonstrates heap sort using a max heap. The program accepts integer values, sorts them in ascending order, and displays the original list, sorted list, execution time, and complexity information.
+
+## Program
+
+- `max heap sort.py` builds a max heap, then repeatedly swaps the largest value at the root with the last value in the unsorted portion. It restores the heap and continues until the list is sorted.
+
+## Complexity
+
+| Case or resource | Complexity |
+|---|---:|
+| Best-case time | O(n log n) |
+| Average-case time | O(n log n) |
+| Worst-case time | O(n log n) |
+| Auxiliary space for an iterative heap sort | O(1) |
+
+Here, `n` is the number of elements. This script's `heapify` function is recursive, so its call stack can use O(log n) space. The program prints O(1) auxiliary space, which describes heap sort's array storage, not the recursive stack in this implementation.
+
+## Requirements
+
+- Python 3
+- No third-party packages
+
+## Run
+
+Open a terminal in this directory and run:
+
+```powershell
+python "max heap sort.py"
+```
+
+Enter the number of elements, then enter each integer on its own line. The program reports the values sorted in ascending order. Its execution-time measurement covers the sorting operation, not input entry.

@@ -1,0 +1,34 @@
+# Practical 7: Minimum Coin Change
+
+This practical uses bottom-up dynamic programming to find the minimum number of coins needed to make a target amount. It also reconstructs one combination of denominations that achieves that minimum.
+
+## Program
+
+- `dynamic_programming.py` stores the best result for each amount from zero up to the target, trying each available denomination. A second table records the last coin used so the chosen combination can be reconstructed.
+- The denominations may be any positive integers; a greedy choice is not guaranteed to give the minimum number of coins.
+
+For target amount `A` and `m` denominations, the algorithm takes O(A × m) time and O(A) space.
+
+## Requirements
+
+- Python 3
+- No third-party packages
+
+## Run
+
+Open a terminal in this directory and run:
+
+```powershell
+python dynamic_programming.py
+```
+
+Enter the coin denominations separated by spaces, then enter the target amount. For example:
+
+```text
+Enter coin denominations separated by spaces: 1 2 5
+Enter the amount: 11
+Minimum number of coins: 3
+Coins used: [1, 5, 5]
+```
+
+The order of coins in the returned combination may vary when multiple optimal combinations exist. If the amount cannot be formed, the program reports that no solution exists. Denominations must be positive, and the amount must be non-negative; invalid values raise a `ValueError`.

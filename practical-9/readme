@@ -1,0 +1,28 @@
+# Practical 9: Prim's Minimum Spanning Tree Algorithm
+
+This practical implements Prim's algorithm to find a minimum spanning tree (MST) of a connected, weighted, undirected graph. Starting from vertex `0`, it repeatedly adds the lowest-weight edge connecting a selected vertex to an unselected vertex until it has selected `V - 1` edges.
+
+## Program
+
+- `prims_algo.py` stores the graph as an adjacency matrix and prints the edges selected for the MST with their weights.
+- The default graph has five vertices, numbered `0` through `4`.
+- A matrix value of `0` means there is no edge between those vertices; the diagonal is also `0`. This representation does not support zero-weight edges.
+
+## Complexity
+
+For `V` vertices, this implementation scans the full matrix on each of its `V - 1` iterations, giving O(V^3) time. The adjacency matrix uses O(V^2) space.
+
+## Requirements
+
+- Python 3
+- No third-party packages
+
+## Run
+
+Open a terminal in this directory and run:
+
+```powershell
+python prims_algo.py
+```
+
+The program prints the MST edges and their weights. The graph is hard-coded; to test a different graph, update `graph` in the script. Use a square, symmetric matrix for an undirected graph, with matching row and column counts. The current implementation assumes the graph is connected and does not report a separate error for disconnected input.

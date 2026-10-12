@@ -1,0 +1,38 @@
+# Practical 2: Searching Algorithms
+
+This practical contains standalone Python programs that search an integer list for a target value using linear search and binary search. Each program displays the input list, the search result, execution time, and complexity information.
+
+## Programs
+
+| File | Algorithm | Input requirement | Best time | Average time | Worst time | Extra space |
+|---|---|---|---:|---:|---:|---:|
+| `linear search.py` | Linear search | Any order | O(1) | O(n) | O(n) | O(1) |
+| `binary search.py` | Binary search | Must be sorted in ascending order | O(1) | O(log n) | O(log n) | O(1) |
+
+Here, `n` is the number of elements. Linear search checks values from the beginning and returns the first matching position. Binary search repeatedly halves the search range and returns the position of a match; if there are duplicate values, it is not guaranteed to return the first occurrence.
+
+## Requirements
+
+- Python 3
+- No third-party packages
+
+## Run a program
+
+Open a terminal in this directory and run one of the scripts. For example:
+
+```powershell
+python "linear search.py"
+```
+
+Enter the number of elements, then enter each integer on its own line. When prompted, enter the target value. The program reports the position using one-based numbering, or says that the element was not found. To run binary search, provide the elements in ascending sorted order:
+
+```powershell
+python "binary search.py"
+```
+
+## Algorithm notes
+
+- **Linear search** works with sorted or unsorted data and is suitable for small lists or lists that are not ordered.
+- **Binary search** is more efficient for large lists, but only produces correct results when the input is sorted in ascending order.
+
+Both scripts measure only the search operation, not the time spent entering or preparing the input. The reported execution time can vary by machine and input size, so treat it as an educational measurement rather than a precise benchmark.

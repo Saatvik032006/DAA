@@ -1,0 +1,31 @@
+# Practical 4: Factorial with Iteration and Recursion
+
+This practical compares two ways to calculate the factorial of a non-negative integer. Both programs display the result using the same prompt and output format.
+
+## Programs
+
+| File | Method | Time complexity | Extra space |
+|---|---|---:|---:|
+| `factorial.py` | Iterative loop | O(n) | O(1) |
+| `recursive.py` | Recursive function calls | O(n) | O(n) call stack |
+
+For a non-negative integer `n`, the factorial is the product of all positive integers up to `n`. By convention, `0!` is `1`. The recursive program uses `0` and `1` as base cases and reduces the input by one on each call. Negative inputs raise a `ValueError` in either program.
+
+## Requirements
+
+- Python 3
+- No third-party packages
+
+## Run
+
+Open a terminal in this directory and run either program:
+
+```powershell
+python factorial.py
+```
+
+```powershell
+python recursive.py
+```
+
+Enter a non-negative integer when prompted. For example, input `5` produces `Factorial of 5 is 120`. The recursive approach uses one call-stack frame per level, so sufficiently large inputs may exceed Python's recursion limit; the iterative version avoids that limitation.

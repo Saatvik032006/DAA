@@ -1,0 +1,40 @@
+ # Practical 1: Sorting Algorithms
+
+This practical contains standalone Python programs that sort integer input using five fundamental sorting algorithms. Each program reports the sorted array, execution time, and time and space complexity.
+
+## Programs
+
+| File | Algorithm | Best time | Average time | Worst time | Extra space |
+|---|---|---:|---:|---:|---:|
+| `Bubble sort.py` | Bubble sort | O(n) | O(n^2) | O(n^2) | O(1) |
+| `insertion sort.py` | Insertion sort | O(n) | O(n^2) | O(n^2) | O(1) |
+| `selection sort.py` | Selection sort | O(n^2) | O(n^2) | O(n^2) | O(1) |
+| `merge sort.py` | Merge sort | O(n log n) | O(n log n) | O(n log n) | O(n) |
+| `quick sort.py` | Quick sort | O(n log n) | O(n log n) | O(n^2) | O(log n) average; O(n) worst case |
+
+Here, `n` is the number of input elements. Quick sort selects the last element as its pivot, so already sorted or reverse-sorted input can lead to its worst-case time and recursion-space usage. Its program prints the average-case space complexity.
+
+## Requirements
+
+- Python 3
+- No third-party packages
+
+## Run a program
+
+Open a terminal in this directory and run the desired script. For example:
+
+```powershell
+python "Bubble sort.py"
+```
+
+When prompted, enter the number of elements and then enter each integer on its own line. The program sorts the values in ascending order and displays the result and measured execution time. Replace the filename in the command to run another algorithm.
+
+## Algorithm notes
+
+- **Bubble sort** repeatedly swaps adjacent out-of-order elements. It can stop early when a pass makes no swaps.
+- **Insertion sort** grows a sorted portion of the list by inserting each next value in its correct position.
+- **Selection sort** repeatedly finds the smallest value in the unsorted portion and moves it into place.
+- **Merge sort** divides the list into halves, sorts them recursively, and merges the results.
+- **Quick sort** partitions the list around a pivot and recursively sorts each partition.
+
+The programs are intended for learning and comparing algorithm behavior. Their execution-time measurements are affected by the machine and input size, so they are most useful for small experiments rather than as precise benchmarks.
