@@ -50,7 +50,18 @@ These are fundamental graph algorithms used to visit vertices and explore connec
 ### Practical 9: Prim’s Algorithm
 This practical implemented Prim’s algorithm for finding a Minimum Spanning Tree (MST) in a weighted graph. It demonstrated how to connect all vertices with minimum total edge weight while avoiding cycles.
 
+
+Practical 10: Kruskal’s Algorithm
+This practical focused on Kruskal’s algorithm, another method for finding a Minimum Spanning Tree (MST). It sorted all edges by weight and selected the lowest-cost edges while avoiding cycles using the union-find approach. This helped in understanding alternative ways to build an MST efficiently.
+
+### Practical 11: Floyd-Warshall Algorithm
+This practical used the Floyd-Warshall algorithm to compute the shortest path between every pair of vertices in a weighted graph. It demonstrated the dynamic programming concept where each vertex is checked as a possible intermediate node to improve the shortest path values.
+
+### Practical 12: Travelling Salesman Problem
+This practical solved the Travelling Salesman Problem (TSP) using backtracking. It explored all possible tours from a starting city and selected the route with the minimum total cost. The example highlighted how brute-force search works, even though it becomes expensive for large inputs.
+
 ---
+
 
 ## Conclusion
 
